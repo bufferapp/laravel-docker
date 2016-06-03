@@ -4,24 +4,10 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 ## Setup
 
-1 - With the buffer-dev setup, clone this repo in the root dir then add this to the `docker-compose.yml` or do `git co task/rocket`:
+1 - With the buffer-dev setup, clone this repo in the root dir then
 
-```
-rocket:
-  build: ./rocket
-  volumes:
-   - ./rocket:/var/www/html
-  ports:
-   - "8080:80"
-  expose:
-   - "8080"
-```
+2 - Still from buffer-dev run `git checkout task/rocket` then `./dev up`
 
-2 - Add the domain `rocket.local.buffer.com` to your hosts file: `/etc/hosts` or automate this in
-buffer-dev.
-```
-192.168.99.100 rocket.local.buffer.com
-```
 
 3 - Go inside the `rocket` folder and install the vendors by running `composer install`
 
@@ -30,7 +16,7 @@ buffer-dev.
 APP_ENV=local
 APP_DEBUG=true
 APP_KEY=base64:Yw0NU7Q9qhmZSVOL8J1ikSs/dmZo/4G33sHn6z8WSGE=
-APP_URL=http://localhost
+APP_URL=http://rocket.local.buffer.com:8080
 ​
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -57,5 +43,6 @@ MAIL_ENCRYPTION=null
 
 5 - Go to `http://192.168.99.100:8080` or `http://rocket.local.buffer.com:8080`, you should see a welcome page :)
 
+## For later use
 There is additional configuration with the reverse proxy, see this
 [pull request](https://github.com/bufferapp/buffer-dev/pull/28/files) for a guide.
