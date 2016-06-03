@@ -4,7 +4,7 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 ## Setup
 
-1 - With the buffer-dev setup, clone this repo in the root dir and add this to the `docker-compose.yml`:
+1 - With the buffer-dev setup, clone this repo in the root dir then add this to the `docker-compose.yml` or do `git co task/rocket`:
 
 ```
 rocket:
