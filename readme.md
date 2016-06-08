@@ -4,14 +4,9 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 ## Setup
 
-1 - With the buffer-dev setup, clone this repo in the root dir then
+1 - Clone this repo and Install the vendors by running `composer install`
 
-2 - Still from buffer-dev run `git checkout task/rocket` then `./dev up`
-
-
-3 - Go inside the `rocket` folder and install the vendors by running `composer install`
-
-4 - Create a `.env` file with the following inside:
+2 - Create a `.env` file with the following inside:
 ```
 APP_ENV=local
 APP_DEBUG=true
@@ -41,7 +36,16 @@ MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
 ```
 
-5 - Go to `http://192.168.99.100:8080` or `http://rocket.local.buffer.com:8080`, you should see a welcome page :)
+3 - Install the [Docker toolbox](https://www.docker.com/products/docker-toolbox) for Docker, Compose
+and Machine
+
+4 - Start the docker machine with `docker-machine start buffer`
+
+5 - Tell your mac where your VM is with `eval $(docker-machine env buffer)`
+
+6 - Start everything up: `docker-compose up -d`
+
+7 - Goto `http://192.168.99.100` in your browser (or check `docker-machine ip buffer` for the address)
 
 ## For later use
 There is additional configuration with the reverse proxy, see this
